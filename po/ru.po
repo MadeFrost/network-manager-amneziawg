@@ -1,0 +1,430 @@
+# Russian translation for network-manager-amneziawg.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the network-manager-amneziawg package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: network-manager-amneziawg 0.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-07 17:43+0300\n"
+"PO-Revision-Date: 2026-11-07 11:00+0300\n"
+"Last-Translator: Alexey Shamanin <alexey.shamanin@icloud.com>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/editor/editor-fields.c:11
+msgid "_Private Key"
+msgstr "_Закрытый ключ"
+
+#: src/editor/editor-fields.c:11
+msgid "The 256 bit private key in base64 encoding"
+msgstr "256-битный закрытый ключ в кодировке base64"
+
+#: src/editor/editor-fields.c:13
+msgid "_Address"
+msgstr "_Адрес"
+
+#: src/editor/editor-fields.c:14
+msgid ""
+"IPv4 and/or IPv6 addresses of this device with prefix length, separated by "
+"commas"
+msgstr ""
+"IPv4- и/или IPv6-адреса этого устройства с длиной префикса, через запятую"
+
+#: src/editor/editor-fields.c:16
+msgid "_DNS"
+msgstr "_DNS"
+
+#: src/editor/editor-fields.c:16
+msgid "DNS servers and search domains, separated by commas"
+msgstr "DNS-серверы и домены поиска, через запятую"
+
+#: src/editor/editor-fields.c:18
+msgid "_Listen Port"
+msgstr "_Порт прослушивания"
+
+#: src/editor/editor-fields.c:19
+msgid ""
+"A port to listen on. If set to 'automatic', the port will be chosen randomly "
+"when the interface comes up."
+msgstr ""
+"Порт для прослушивания. Если выбрано «автоматический», порт будет выбран "
+"случайно при поднятии интерфейса."
+
+#: src/editor/editor-fields.c:20 src/editor/editor-fields.c:21
+msgid "automatic"
+msgstr "автоматический"
+
+#: src/editor/editor-fields.c:21
+msgid "_MTU"
+msgstr "_MTU"
+
+#: src/editor/editor-fields.c:21 src/editor/editor-fields.c:42
+#: src/editor/editor-fields.c:43 src/editor/editor-fields.c:45
+#: src/editor/editor-fields.c:47 src/editor/editor-fields.c:49
+#: src/editor/editor-fields.c:51
+msgid "bytes"
+msgstr "байт"
+
+#: src/editor/editor-fields.c:24
+msgid "_Endpoint"
+msgstr "_Конечная точка"
+
+#: src/editor/editor-fields.c:25
+msgid ""
+"An endpoint IP or hostname, followed by a colon, and then a port number."
+msgstr "IP-адрес или имя узла, затем двоеточие и номер порта."
+
+#: src/editor/editor-fields.c:27
+msgid "_Public key"
+msgstr "_Открытый ключ"
+
+#: src/editor/editor-fields.c:27
+msgid "The server's 256 bit public key in base64 encoding"
+msgstr "256-битный открытый ключ сервера в кодировке base64"
+
+#: src/editor/editor-fields.c:29
+msgid "P_re-shared key"
+msgstr "Пр_едварительно-общий ключ"
+
+#: src/editor/editor-fields.c:30
+msgid ""
+"A base64 preshared key. Optional, and may be omitted. Adds an additional "
+"layer of symmetric-key cryptography."
+msgstr ""
+"Предварительно-общий ключ в кодировке base64. Необязателен. Добавляет "
+"дополнительный уровень симметричного шифрования."
+
+#: src/editor/editor-fields.c:32
+msgid "Allowed _IP addresses"
+msgstr "Разрешенные _IP-адреса"
+
+#: src/editor/editor-fields.c:33
+msgid ""
+"Traffic to these networks is sent through the tunnel. 0.0.0.0/0, ::/0 sends "
+"all traffic."
+msgstr ""
+"Трафик в эти сети идёт через туннель. 0.0.0.0/0, ::/0 означает весь трафик."
+
+#: src/editor/editor-fields.c:35
+msgid "P_ersistent keepalive"
+msgstr "Постоянный _keepalive"
+
+#: src/editor/editor-fields.c:36
+msgid ""
+"How often to send an empty packet to keep the connection alive behind NAT"
+msgstr ""
+"Как часто отправлять пустой пакет, чтобы соединение не обрывалось за NAT"
+
+#: src/editor/editor-fields.c:37
+msgid "off"
+msgstr "выключено"
+
+#: src/editor/editor-fields.c:37
+msgid "seconds"
+msgstr "сек"
+
+#: src/editor/editor-fields.c:40
+msgid "Junk packet count"
+msgstr "Число мусорных пакетов"
+
+#: src/editor/editor-fields.c:40
+msgid "Number of junk packets sent before the handshake"
+msgstr "Сколько мусорных пакетов отправлять перед рукопожатием"
+
+#: src/editor/editor-fields.c:42
+msgid "Junk packet min size"
+msgstr "Мин. размер мусорного пакета"
+
+#: src/editor/editor-fields.c:43
+msgid "Junk packet max size"
+msgstr "Макс. размер мусорного пакета"
+
+#: src/editor/editor-fields.c:44
+msgid "Init packet padding"
+msgstr "Заполнение пакета инициации"
+
+#: src/editor/editor-fields.c:44
+msgid "Random bytes added to the handshake initiation packet"
+msgstr "Случайные байты, добавляемые к пакету инициации рукопожатия"
+
+#: src/editor/editor-fields.c:46
+msgid "Response packet padding"
+msgstr "Заполнение пакета ответа"
+
+#: src/editor/editor-fields.c:46
+msgid "Random bytes added to the handshake response packet"
+msgstr "Случайные байты, добавляемые к пакету ответа на рукопожатие"
+
+#: src/editor/editor-fields.c:48
+msgid "Cookie packet padding"
+msgstr "Заполнение cookie-пакета"
+
+#: src/editor/editor-fields.c:48
+msgid "Random bytes added to the cookie reply packet"
+msgstr "Случайные байты, добавляемые к пакету cookie reply"
+
+#: src/editor/editor-fields.c:50
+msgid "Transport packet padding"
+msgstr "Заполнение пакета данных"
+
+#: src/editor/editor-fields.c:50
+msgid "Random bytes added to every data packet"
+msgstr "Случайные байты, добавляемые к каждому пакету данных"
+
+#: src/editor/editor-fields.c:52
+msgid "Init packet header"
+msgstr "Заголовок пакета инициации"
+
+#: src/editor/editor-fields.c:52
+msgid "Message type of the handshake initiation packet: a number or a range"
+msgstr "Тип сообщения пакета инициации рукопожатия: число или диапазон"
+
+#: src/editor/editor-fields.c:54
+msgid "Response packet header"
+msgstr "Заголовок пакета ответа"
+
+#: src/editor/editor-fields.c:54
+msgid "Message type of the handshake response packet: a number or a range"
+msgstr "Тип сообщения пакета ответа на рукопожатие: число или диапазон"
+
+#: src/editor/editor-fields.c:56
+msgid "Cookie packet header"
+msgstr "Заголовок cookie-пакета"
+
+#: src/editor/editor-fields.c:56
+msgid "Message type of the cookie reply packet: a number or a range"
+msgstr "Тип сообщения пакета cookie reply: число или диапазон"
+
+#: src/editor/editor-fields.c:58
+msgid "Transport packet header"
+msgstr "Заголовок пакета данных"
+
+#: src/editor/editor-fields.c:58
+msgid "Message type of data packets: a number or a range"
+msgstr "Тип сообщения пакетов данных: число или диапазон"
+
+#: src/editor/editor-fields.c:60
+msgid "Signature packet 1"
+msgstr "Сигнатурный пакет 1"
+
+#: src/editor/editor-fields.c:60
+msgid ""
+"Packet sent before the handshake to imitate another protocol, e.g. <b 0x…><r "
+"16>"
+msgstr ""
+"Пакет, отправляемый перед рукопожатием для имитации другого протокола, "
+"например <b 0x…><r 16>"
+
+#: src/editor/editor-fields.c:62
+msgid "Signature packet 2"
+msgstr "Сигнатурный пакет 2"
+
+#: src/editor/editor-fields.c:63
+msgid "Signature packet 3"
+msgstr "Сигнатурный пакет 3"
+
+#: src/editor/editor-fields.c:64
+msgid "Signature packet 4"
+msgstr "Сигнатурный пакет 4"
+
+#: src/editor/editor-fields.c:65
+msgid "Signature packet 5"
+msgstr "Сигнатурный пакет 5"
+
+#: src/editor/editor-fields.c:238
+msgid "Show/hide private key"
+msgstr "Показать/скрыть закрытый ключ"
+
+#: src/editor/editor-fields.c:239
+msgid "Show/hide pre-shared key"
+msgstr "Показать/скрыть предварительно-общий ключ"
+
+#: src/editor/editor-peers.c:28
+msgid "Unsaved peer"
+msgstr "Несохраненный узел"
+
+#: src/editor/editor-peers.c:36
+msgid "Only one peer is supported"
+msgstr "Поддерживается только один узел"
+
+#: src/editor/editor-peers.c:36
+msgid "Add peer"
+msgstr "Добавить узел"
+
+#: src/editor/editor-peers.c:122
+msgid "_Apply"
+msgstr "_Применить"
+
+#: src/editor/editor-peers.c:157
+msgid "_Peers"
+msgstr "_Узлы"
+
+#: src/editor/editor-peers.c:176
+msgid "No peers set up"
+msgstr "Узлы не настроены"
+
+#: src/editor/editor-peers.c:206
+msgid "Options…"
+msgstr "Параметры…"
+
+#: src/editor/editor-peers.c:213
+msgid "Remove"
+msgstr "Удалить"
+
+#: src/editor/nm-amneziawg-editor.c:53
+#, c-format
+msgid "“%s” is required"
+msgstr "Поле «%s» обязательно"
+
+#: src/editor/nm-amneziawg-editor.c:59
+#, c-format
+msgid "“%s” is invalid"
+msgstr "Поле «%s» заполнено неверно"
+
+#: src/editor/nm-amneziawg-editor.c:123
+msgid "Add a peer: the server to connect to"
+msgstr "Добавьте узел: сервер, к которому нужно подключаться"
+
+#: src/editor/nm-amneziawg-editor.c:197
+msgid ""
+"These parameters must match the server. They are taken from the AmneziaWG "
+"configuration file; change them only if you know the server settings."
+msgstr ""
+"Эти параметры должны совпадать с настройками сервера. Они берутся из файла "
+"конфигурации AmneziaWG; меняйте их, только если знаете настройки сервера."
+
+#: src/editor/nm-amneziawg-editor.c:217
+msgid "General"
+msgstr "Основные"
+
+#: src/editor/nm-amneziawg-editor.c:218
+msgid "Obfuscation"
+msgstr "Обфускация"
+
+#: src/plugin/nm-amneziawg-plugin.c:14
+msgid "WireGuard with AmneziaWG traffic obfuscation"
+msgstr "WireGuard с обфускацией трафика AmneziaWG"
+
+#: src/plugin/nm-amneziawg-plugin.c:58
+#, c-format
+msgid ""
+"This is a plain WireGuard config without AmneziaWG parameters (Jc, S1, H1…). "
+"Import it as a WireGuard connection instead."
+msgstr ""
+"Это обычная конфигурация WireGuard без параметров AmneziaWG (Jc, S1, H1…). "
+"Импортируйте её как подключение WireGuard."
+
+#: src/plugin/nm-amneziawg-plugin.c:97
+#, c-format
+msgid "The connection has no VPN settings"
+msgstr "У подключения нет параметров VPN"
+
+#: src/plugin/nm-amneziawg-plugin.c:138
+#, c-format
+msgid "Cannot locate the plugin directory"
+msgstr "Не удалось найти каталог модуля"
+
+#: src/plugin/nm-amneziawg-plugin.c:146
+#, c-format
+msgid "Cannot load the editor %s: %s"
+msgstr "Не удалось загрузить редактор %s: %s"
+
+#: src/plugin/nm-amneziawg-plugin.c:153
+#, c-format
+msgid "The editor library is invalid"
+msgstr "Библиотека редактора повреждена"
+
+#: src/shared/awg-conf.c:70
+#, c-format
+msgid "line %u: unknown section %s"
+msgstr "строка %u: неизвестный раздел %s"
+
+#: src/shared/awg-conf.c:79
+#, c-format
+msgid "line %u: expected \"Key = Value\" inside a section"
+msgstr "строка %u: внутри раздела ожидается «Ключ = Значение»"
+
+#: src/shared/awg-conf.c:87
+#, c-format
+msgid "line %u: empty key"
+msgstr "строка %u: пустой ключ"
+
+#: src/shared/awg-conf.c:105
+#, c-format
+msgid "config must contain exactly one [Interface] section"
+msgstr "конфигурация должна содержать ровно один раздел [Interface]"
+
+#: src/shared/awg-conf.c:110
+#, c-format
+msgid "config must contain exactly one [Peer] section (found %u)"
+msgstr "конфигурация должна содержать ровно один раздел [Peer] (найдено: %u)"
+
+#: src/shared/awg-conf.c:115
+#, c-format
+msgid "[Peer] must have PublicKey and Endpoint"
+msgstr "в разделе [Peer] должны быть PublicKey и Endpoint"
+
+#: src/shared/awg-validate.c:117
+msgid "<b> needs bytes in hex after “0x”, for example <b 0x1a2b>"
+msgstr "В <b> нужны байты в hex после «0x», например <b 0x1a2b>"
+
+#: src/shared/awg-validate.c:119
+msgid "<b> needs an even number of hex digits, two per byte"
+msgstr "В <b> должно быть чётное число hex-цифр, по две на байт"
+
+#: src/shared/awg-validate.c:122
+#, c-format
+msgid "<%s> takes no value, write just <%s>"
+msgstr "У <%s> не бывает значения, пишите просто <%s>"
+
+#: src/shared/awg-validate.c:125
+#, c-format
+msgid "<%s> needs a length in bytes, for example <%s 16>"
+msgstr "В <%s> нужна длина в байтах, например <%s 16>"
+
+#: src/shared/awg-validate.c:127
+#, c-format
+msgid "unknown tag <%s>; supported: <b 0x…>, <r N>, <rc N>, <rd N>, <c>, <t>"
+msgstr ""
+"неизвестный тег <%s>; поддерживаются: <b 0x…>, <r N>, <rc N>, <rd N>, <c>, "
+"<t>"
+
+#: src/shared/awg-validate.c:173
+msgid "must be a 32-byte key in base64, as made by “awg genkey”"
+msgstr "нужен 32-байтный ключ в base64, как выдаёт «awg genkey»"
+
+#: src/shared/awg-validate.c:182
+#, c-format
+msgid "“%s” is not an IP address with an optional prefix, such as 10.8.1.2/32"
+msgstr "«%s» не IP-адрес с необязательным префиксом, например 10.8.1.2/32"
+
+#: src/shared/awg-validate.c:188
+msgid "must be host:port, such as vpn.example.com:51820 or [2001:db8::1]:51820"
+msgstr ""
+"нужно host:port, например vpn.example.com:51820 или [2001:db8::1]:51820"
+
+#: src/shared/awg-validate.c:195
+#, c-format
+msgid "must be a whole number from %u to %u"
+msgstr "нужно целое число от %u до %u"
+
+#: src/shared/awg-validate.c:227
+msgid "an IPv4 address is needed: AllowedIPs has IPv4 networks"
+msgstr "нужен IPv4-адрес: в AllowedIPs есть IPv4-сети"
+
+#: src/shared/awg-validate.c:244 src/shared/awg-validate.c:256
+#, c-format
+msgid "invalid %s: %s"
+msgstr "неверный %s: %s"
+
+#: src/shared/awg-validate.c:247
+#, c-format
+msgid "%s is missing"
+msgstr "не задан %s"

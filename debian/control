@@ -1,0 +1,32 @@
+Source: network-manager-amneziawg
+Section: net
+Priority: optional
+Maintainer: Alexey Shamanin <alexey.shamanin@icloud.com>
+Build-Depends: debhelper-compat (= 13),
+               meson (>= 0.63),
+               pkgconf,
+               gettext,
+               libglib2.0-dev (>= 2.74),
+               libnm-dev (>= 1.40),
+               libgtk-4-dev,
+               libgtk-3-dev
+Standards-Version: 4.6.2
+Homepage: https://github.com/MadeFrost/network-manager-amneziawg
+Vcs-Browser: https://github.com/MadeFrost/network-manager-amneziawg
+Vcs-Git: https://github.com/MadeFrost/network-manager-amneziawg.git
+Rules-Requires-Root: no
+
+Package: network-manager-amneziawg
+Architecture: linux-any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         network-manager (>= 1.40),
+         amneziawg-tools,
+         iproute2
+Recommends: amneziawg | amneziawg-dkms
+Suggests: network-manager-gnome
+Description: NetworkManager VPN plugin for AmneziaWG
+ Adds an "AmneziaWG" VPN type to GNOME Settings and nm-connection-editor,
+ including import/export of AmneziaWG .conf files (Jc/Jmin/Jmax, S1-S4,
+ H1-H4, I1-I5 obfuscation parameters). Uses the amneziawg kernel module
+ and amneziawg-tools (awg) from ppa:amnezia/ppa.

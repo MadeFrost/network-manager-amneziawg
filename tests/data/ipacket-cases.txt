@@ -1,0 +1,37 @@
+# I1..I5 values and how the amneziawg kernel module (junk.c) treats them.
+# Recorded with `awg setconf` against module 3.1.20260812; checked by
+# tests/unit/test-ipacket.c (our validator) and tests/integration/ipacket-kernel.sh
+# (the running kernel). Format: OK|ERR, a tab, the value (rest of the line).
+OK	<b 0x1a2b>
+OK	<b 0x1a2b><r 16><t><c>
+OK	<b 0xDEADbeef><rc 8><rd 4>
+ERR	<b 0x1a2>
+ERR	<b 1a2b>
+ERR	<b 0X1a2b>
+ERR	<b 0x>
+ERR	<b>
+ERR	<b 0xzz>
+ERR	<b 0x1a 2b>
+ERR	<b  0x1a2b>
+OK	<r 16>
+ERR	<r>
+ERR	<r abc>
+ERR	<r -5>
+OK	<r +5>
+OK	<r 0>
+ERR	<r 99999999999>
+OK	<rc 3><rd 3>
+OK	<c>
+OK	<t>
+ERR	<c >
+ERR	<t 5>
+ERR	<x 1>
+ERR	<B 0x12>
+ERR	<>
+ERR	<b 0x12></b>
+OK	<b 0x1a2b
+OK	garbage <r 4> trailing
+OK	plain text
+OK	<r 4><b 0x12>
+OK	<b 0x12>>
+ERR	<<b 0x12>

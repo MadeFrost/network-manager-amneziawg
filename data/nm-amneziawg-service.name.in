@@ -1,0 +1,13 @@
+[VPN Connection]
+name=amneziawg
+service=org.freedesktop.NetworkManager.amneziawg
+program=@LIBEXECDIR@/nm-amneziawg-service
+supports-multiple-connections=true
+
+[libnm]
+plugin=libnm-vpn-plugin-amneziawg.so
+
+[GNOME]
+auth-dialog=@LIBEXECDIR@/nm-amneziawg-auth-dialog
+supports-external-ui-mode=false
+supports-hints=false

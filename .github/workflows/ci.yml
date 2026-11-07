@@ -1,0 +1,53 @@
+# Build, unit tests and the .deb on every push and pull request.
+# Integration tests need the amneziawg kernel module and run locally only.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential pkg-config gettext meson ninja-build debhelper \
+            libnm-dev libgtk-4-dev libgtk-3-dev xvfb xauth
+
+      - name: Build
+        run: |
+          meson setup build --prefix=/usr --werror
+          meson compile -C build
+
+      - name: Unit tests
+        # The editor test needs a display.
+        env:
+          GSK_RENDERER: cairo
+          GTK_A11Y: none
+          NO_AT_BRIDGE: "1"
+        run: xvfb-run -a meson test -C build --suite unit --print-errorlogs
+
+      - name: Package
+        # Unit tests already ran above, under Xvfb.
+        env:
+          DEB_BUILD_OPTIONS: nocheck
+        run: packaging/build-deb.sh
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: deb
+          path: build/*.deb
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: test-logs
+          path: build/meson-logs/

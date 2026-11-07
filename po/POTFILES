@@ -1,0 +1,8 @@
+# Files with translatable strings
+src/editor/editor-fields.c
+src/editor/editor-peers.c
+src/editor/nm-amneziawg-editor.c
+src/plugin/nm-amneziawg-plugin.c
+src/shared/awg-common.c
+src/shared/awg-conf.c
+src/shared/awg-validate.c

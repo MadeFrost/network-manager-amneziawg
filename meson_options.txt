@@ -1,0 +1,2 @@
+option('gtk4', type: 'feature', value: 'auto', description: 'GTK4 editor, used by GNOME Settings')
+option('gtk3', type: 'feature', value: 'auto', description: 'GTK3 editor, used by nm-connection-editor')

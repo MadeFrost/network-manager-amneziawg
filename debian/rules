@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+# The top-level Makefile is a developer wrapper; without this dh would use it.
+%:
+	dh $@ --buildsystem=meson
+
+# Same paths as `meson setup --prefix=/usr` (make).
+override_dh_auto_configure:
+	dh_auto_configure -- --libexecdir=libexec -Dgtk4=enabled -Dgtk3=enabled
+
+# Integration tests need a kernel module and namespaces, which builders lack.
+# The editor test skips itself without a display.
+override_dh_auto_test:
+	dh_auto_test -- --suite unit --print-errorlogs
