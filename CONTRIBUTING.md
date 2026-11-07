@@ -64,7 +64,9 @@ After changing strings in the code: `make update-po`.
 1. Set the version in `meson.build`, add a `debian/changelog` entry with the same version
    (series `noble`) and a section in `CHANGELOG.md`. The package is native: a packaging
    fix needs a new version too.
-2. `packaging/ppa.sh` builds the signed source package from the last commit, then
-   `dput ppa:madefrost/amneziawg build/ppa/network-manager-amneziawg_*_source.changes`.
+2. Tag `v<version>` and publish a GitHub release for it. The `Release` workflow uploads the
+   source package to the PPA and attaches `install.sh` and the `.deb` to the release.
 3. On Launchpad, copy the built binaries to newer Ubuntu series.
-4. Tag `v<version>` and attach `install.sh` to the GitHub release.
+
+By hand instead of step 2: `packaging/ppa.sh` builds the signed source package from the
+last commit, then `dput ppa:madefrost/amneziawg build/ppa/network-manager-amneziawg_*_source.changes`.

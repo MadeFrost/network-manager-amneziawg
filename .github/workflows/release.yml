@@ -1,0 +1,59 @@
+# On a published GitHub release: upload the signed source package to the PPA
+# and attach install.sh and the .deb to the release.
+#
+# Needs the environment "ppa" (Settings → Environments, deployment tags v*) with:
+#   PPA_GPG_KEY  armored secret key without a passphrase, registered on Launchpad
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  ppa:
+    runs-on: ubuntu-24.04
+    environment: ppa
+    env:
+      TAG: ${{ github.event.release.tag_name }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential pkg-config gettext meson ninja-build debhelper dput gnupg \
+            libnm-dev libgtk-4-dev libgtk-3-dev
+
+      - name: Check the version
+        run: |
+          version=$(dpkg-parsechangelog -S Version)
+          if [ "$TAG" != "v$version" ]; then
+            echo "::error::tag $TAG does not match debian/changelog version $version"
+            exit 1
+          fi
+
+      - name: Build the .deb
+        run: make deb
+
+      - name: Import the signing key
+        env:
+          PPA_GPG_KEY: ${{ secrets.PPA_GPG_KEY }}
+        run: |
+          [ -n "$PPA_GPG_KEY" ] || { echo "::error::secret PPA_GPG_KEY is not set"; exit 1; }
+          printf '%s\n' "$PPA_GPG_KEY" | gpg --batch --import
+          fpr=$(gpg --batch --with-colons --list-secret-keys | awk -F: '$1 == "fpr" { print $10; exit }')
+          echo "DEB_SIGN_KEYID=$fpr" >> "$GITHUB_ENV"
+
+      - name: Upload to the PPA
+        run: |
+          packaging/ppa.sh
+          dput ppa:madefrost/amneziawg build/ppa/network-manager-amneziawg_*_source.changes
+
+      - name: Attach files to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$TAG" install.sh build/network-manager-amneziawg_*_amd64.deb --clobber
